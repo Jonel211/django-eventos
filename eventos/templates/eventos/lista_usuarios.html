@@ -1,0 +1,15 @@
+{% extends 'eventos/base.html' %}
+
+{% block content %}
+<h2>Usuarios</h2>
+
+<a href="{% url 'crear_usuario' %}" class="btn btn-primary mb-3">Nuevo Usuario</a>
+
+<ul class="list-group">
+{% for u in usuarios %}
+    <li class="list-group-item">
+        {{ u.nombre }} - {{ u.correo }}
+    </li>
+{% endfor %}
+</ul>
+{% endblock %}

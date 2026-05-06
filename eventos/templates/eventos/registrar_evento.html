@@ -1,0 +1,17 @@
+{% extends 'eventos/base.html' %}
+
+{% block content %}
+<h2>Registrarse en Evento</h2>
+
+<div class="card p-4 shadow">
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <div class="d-flex justify-content-between">
+            <button type="submit" class="btn btn-success">Registrar</button>
+            <a href="{% url 'lista_eventos' %}" class="btn btn-secondary">Volver</a>
+        </div>
+    </form>
+</div>
+{% endblock %}
