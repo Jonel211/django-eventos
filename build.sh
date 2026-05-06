@@ -1,8 +1,12 @@
 #!/usr/bin/env bash
 # exit on error
-set -e errexit
+set -o errexit
 
-# pip install -r requirements.txt
+# 1. Instalar dependencias (¡ESTO ES VITAL!)
+pip install -r requirements.txt
 
+# 2. Recolectar archivos estáticos
 python manage.py collectstatic --no-input
-python manage.py migrate 
+
+# 3. Aplicar migraciones de base de datos
+python manage.py migrate
